@@ -14,4 +14,19 @@
   })
 
   app.listen(3000)
-  ```
+  ```
+2. axios get and post method example.
+  ```js
+    // Performing a GET request
+  axios.get('https://api.github.com/users/' + username)
+    .then(function(response){
+      console.log(response.data); // ex.: { user: 'Your User'}
+      console.log(response.status); // ex.: 200
+    });  
+
+  // Performing a POST request
+  axios.post('/save', { firstName: 'Marlon', lastName: 'Bernardes' })
+    .then(function(response){
+      console.log('saved successfully')
+    });  
+  ```
