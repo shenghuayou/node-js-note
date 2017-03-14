@@ -19,17 +19,17 @@
   2. axios get and post method example. - From [CodeHeaven](http://codeheaven.io/how-to-use-axios-as-your-http-client/)
   ```js
     // Performing a GET request
-  axios.get('https://api.github.com/users/' + username)
-    .then(function(response){
-      console.log(response.data); // ex.: { user: 'Your User'}
-      console.log(response.status); // ex.: 200
-    });  
+    axios.get('https://api.github.com/users/' + username)
+      .then(function(response){
+        console.log(response.data); // ex.: { user: 'Your User'}
+        console.log(response.status); // ex.: 200
+      });  
 
-  // Performing a POST request
-  axios.post('/save', { firstName: 'Marlon', lastName: 'Bernardes' })
-    .then(function(response){
-      console.log('saved successfully')
-    });  
+    // Performing a POST request
+    axios.post('/save', { firstName: 'Marlon', lastName: 'Bernardes' })
+      .then(function(response){
+        console.log('saved successfully')
+      });  
   ```
   
   3. Node.js and MongoDB Apps with Mongoose - From [scotch](https://scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications)
@@ -60,5 +60,31 @@
   // make this available to our users in our Node applications
   module.exports = User;
 ```
-  
+
+```js
+  // if our user.js file is at app/models/user.js
+  var User = require('./app/models/user');
+
+  // create a new user called chris
+  var chris = new User({
+    name: 'Chris',
+    username: 'sevilayha',
+    password: 'password' 
+  });
+
+  // call the custom method. this will just add -dude to his name
+  // user will now be Chris-dude
+  chris.dudify(function(err, name) {
+    if (err) throw err;
+
+    console.log('Your new name is ' + name);
+  });
+
+  // call the built-in save method to save to the database
+  chris.save(function(err) {
+    if (err) throw err;
+
+    console.log('User saved successfully!');
+```
+4.
   
