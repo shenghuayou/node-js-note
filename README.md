@@ -1,6 +1,7 @@
 # node-js-note
  * basic node js
  * express js
+ * mongoose js
  * example codes
 
 ## Example ##
@@ -31,8 +32,19 @@
         console.log('saved successfully')
       });  
   ```
-  
-  3. Node.js and MongoDB Apps with Mongoose - From [scotch](https://scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications)
+  3. a simple mongo schema - From [Code For geek](https://codeforgeek.com/2015/08/restful-api-node-mongodb/)
+```js
+  var mongoose    =   require("mongoose");
+  mongoose.connect('mongodb://localhost:27017/test');
+  var mongoSchema =   mongoose.Schema;
+  var userSchema  = {
+      "userEmail" : String,
+      "userPassword" : String
+  };
+  module.exports = mongoose.model('userLogin',userSchema);;
+
+```
+  4. Node.js and MongoDB Apps with Mongoose - From [scotch](https://scotch.io/tutorials/using-mongoosejs-in-node-js-and-mongodb-applications)
 ```js
   // grab the things we need
   var mongoose = require('mongoose');
@@ -86,5 +98,5 @@
 
     console.log('User saved successfully!');
 ```
-4.
+
   
