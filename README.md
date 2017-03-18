@@ -143,4 +143,21 @@
       );
   }));
 ```
-  
+  7. mongoose promise basic codes - From [eddywashere](http://eddywashere.com/blog/switching-out-callbacks-with-promises-in-mongoose/)
+```js
+  var promise = User.findById('123').exec();
+
+  promise.then(function(user) {
+    user.name = 'Robert Paulson';
+
+    return user.save(); // returns a promise
+  })
+  .then(function(user) {
+    console.log('updated user: ' + user.name);
+    // do something with updated user
+  })
+  .catch(function(err){
+    // just need one of these
+    console.log('error:', err);
+  });
+```
