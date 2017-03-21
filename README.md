@@ -161,3 +161,12 @@
     console.log('error:', err);
   });
 ```
+  8. To have socket.io and express js running in the same port.
+```js
+  var express = require('express')
+  var app = express()
+  var server = require('http').createServer(app)
+  var io = io.listen(server)
+
+  server.listen(80);
+```
