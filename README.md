@@ -170,3 +170,5 @@
 
   server.listen(80);
 ```
+  9. Create simple chat application using Node.JS, Express.JS and Socket.IO
+    - http://javabeginnerstutorial.com/javascript-2/create-simple-chat-application-using-node-js-express-js-socket-io/
